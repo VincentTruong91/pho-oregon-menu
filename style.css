@@ -1,0 +1,160 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: "Sedan", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #3a3631;
+    color: #ffffff;
+}
+
+/* Header Styling */
+#header {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/name-glow.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding: 10px 3%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+}
+
+nav h1 {
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin: 17% auto;
+    text-align: left;
+    max-width: 600px; /* Limit width for better readability */
+}
+
+.header-text h1 {
+    font-size: 70px;
+}
+
+.header-text p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 1375px) {
+    nav ul{
+      display: none;
+    }
+
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .burger-icon {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Rotate burger icon to an X when menu is open */
+    .burger-menu.open .burger-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.open .burger-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.open .burger-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Show navigation links when burger menu is open */
+    .burger-menu.open + .nav-links {
+        display: block;
+    }
+
+    /* Hide scrollbar when menu is open */
+    body.burger-menu-open {
+        overflow: hidden;
+    }
+  }
+
+
+#popular {
+    padding: 40px 0; 
+    text-align: center;
+}
+
+#popular .container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#popular .container img {
+    width: 40%;
+    height: auto;
+    margin: 20px;
+}
+
+#popular .container h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#popular .container ul {
+    list-style: none;
+    text-align: center;
+}
+
+#popular .container ul li {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
